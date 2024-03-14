@@ -1,0 +1,5 @@
+ansible
+ansible-lint
+ansible-navigator
+netaddr>=0.8
+Jinja2>=3.1.2
