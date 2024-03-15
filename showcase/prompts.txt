@@ -1,0 +1,5 @@
+# Install Haproxy PPA ppa:vbernat:haproxy-2.6 & Install Haproxy & Configure Haproxy & Allow Traffic ufw port 443 80 8080
+
+# Run postresql-setup command & Start and enable postgresql service & Allow the traffic
+
+# Install Netplan & Configure Netplan & Install network-manager when is defined as renderer

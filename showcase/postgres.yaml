@@ -1,0 +1,11 @@
+---
+- name: Configure Database Server
+  hosts: databases
+  become: true
+
+
+  tasks:
+    # - name: Install postgresql-server
+
+
+    # Run postgresql-setuo command & Start and enable postgresql service & Allow the traffic

@@ -1,0 +1,7 @@
+---
+- name: Install and Configure Netplan
+  hosts: all
+  become: true
+
+  tasks:
+  # Install Netplan & Configure Netplan & Install network-manager when is defined as rendere

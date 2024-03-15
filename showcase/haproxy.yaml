@@ -1,0 +1,6 @@
+---
+- name: Install and Configure Haproxy on Ubuntu
+  hosts: Haproxy
+  become: true
+
+  # Install Haproxy PPA ppa:vbernat:haproxy-2.6 & Install Haproxy & Configure Haproxy & Allow Traffic ufw port 443 80 8080
