@@ -1,5 +1,11 @@
 ansible
 ansible-lint
 ansible-navigator
+ansible-creator
+ansible-builder
+ansible-sign
+molecule
+pytest-ansible
+tox-ansible
 netaddr>=0.8
 Jinja2>=3.1.2
