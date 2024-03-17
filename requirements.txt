@@ -5,6 +5,7 @@ ansible-creator
 ansible-builder
 ansible-sign
 molecule
+molecule-podman
 pytest-ansible
 tox-ansible
 netaddr>=0.8
