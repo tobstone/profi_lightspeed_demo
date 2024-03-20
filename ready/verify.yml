@@ -1,0 +1,50 @@
+---
+- name: Verify scenario
+  hosts: all
+
+  tasks:
+  # test packages
+    - name: Gather package facts
+      ansible.builtin.package_facts:
+        manager: auto
+    
+
+    - name: Check that postgresql-server is installed
+      ansible.builtin.assert:
+        that: "'postgresql-server' in ansible_facts.packages"
+    
+
+    - name: Gather service facts
+      ansible.builtin.service_facts:
+    
+
+    - name: Check that postgresql.service is enabled and running
+      ansible.builtin.assert:
+        that: ansible_facts.services['postgresql.service'].state == 'running'
+        msg: postgresql.service is not running
+    
+
+    - name: Check that Firwalld is running and enabled
+      ansible.builtin.assert:
+        that: ansible_facts.services['firewalld.service'].state == 'running'
+        msg: firewalld is not running
+    
+
+    - name: Gather information about all firewalld settings
+      ansible.builtin.command: firewall-cmd --list-all-zones
+      changed_when: false
+      register: firewalld_settings
+    
+    # - name: Get firewalld information
+
+
+    - name: Print firewalld settings
+      ansible.builtin.debug:
+        var: firewalld_zones.stdout_lines
+
+
+    - name: Check that TCP Port 5432 is open
+      ansible.builtin.assert:
+        that: "'5432/tcp' in firewalld_settings.stdout"
+        msg: port 5432 is not open
+  
