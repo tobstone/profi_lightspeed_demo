@@ -5,4 +5,35 @@
 
   tasks:
     # - name: Install postgresql-server
-    # Run postgresql-setuo command & Start and enable postgresql service & Allow the traffic
+
+    ---
+- name: Configure Database servers
+  hosts: databases
+  become: true
+
+  tasks:
+    - name: Install postgresql-server
+      package:
+        name: postgresql-server
+        state: present
+
+    # Run postresql-setup command & Start and enable postgresql service & Allow the traffic
+    - name: Run postresql-setup command
+      command: postgresql-setup --initdb
+      args:
+        creates: /var/lib/pgsql/data/postgresql.conf
+
+    - name: Start and enable postgresql service
+      service:
+        name: postgresql
+        state: started
+        enabled: true
+
+    - name: Allow the traffic
+      firewalld:
+        port: 5432/tcp
+        permanent: true
+        state: enabled
+        immediate: true
+
+
