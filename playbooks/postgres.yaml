@@ -1,9 +1,5 @@
 ---
-- name: Configure Database Server
-  hosts: databases
-  become: true
 
-  tasks: "---"
 - name: Configure Database servers
   hosts: databases
   become: true
