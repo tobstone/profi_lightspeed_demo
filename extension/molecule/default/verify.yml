@@ -6,29 +6,16 @@
   # test packages
     - name: Gather package facts
 
-
     - name: Check that postgresql-server is installed
 
-    
-
     - name: Gather service facts
- 
 
     - name: Check that postgresql.service is enabled and running
 
-    
-
     - name: Check that Firwalld is running and enabled
-
-    
 
     - name: Gather information about all firewalld settings
 
-
     - name: Print firewalld settings
 
-
     - name: Check that TCP Port 5432 is open
-
-    
-
