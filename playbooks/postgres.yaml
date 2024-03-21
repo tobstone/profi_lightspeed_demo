@@ -3,10 +3,7 @@
   hosts: databases
   become: true
 
-  tasks:
-    # - name: Install postgresql-server
-
-    ---
+  tasks: "---"
 - name: Configure Database servers
   hosts: databases
   become: true
@@ -35,5 +32,3 @@
         permanent: true
         state: enabled
         immediate: true
-
-
