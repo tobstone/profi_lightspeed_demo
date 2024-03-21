@@ -5,7 +5,8 @@
 
 
   tasks:
-    # - name: Install postgresql-server
+    - name: Install postgresql-server
+    
 
 
-    # Run postgresql-setuo command & Start and enable postgresql service & Allow the traffic
+    # Run postgresql-setup command & Start and enable postgresql service & Allow the traffic
